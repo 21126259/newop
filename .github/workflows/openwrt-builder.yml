@@ -53,19 +53,14 @@ jobs:
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
 
-    - name: 启用 SSH 连接（本地）
-      if: github.event.inputs.ssh == 'true'
+    - name: Install ngrok
       run: |
+        curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null
+        echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list
         sudo apt update
-        sudo apt install -y openssh-server
-        sudo systemctl enable ssh
-        sudo systemctl start ssh
-        echo "root:root" | sudo chpasswd  # 设置 root 密码
-        sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
-        sudo sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
-        sudo systemctl restart ssh
-        echo "🔑 SSH 登录信息:"
-        echo "Local SSH: ssh root@$(hostname -I | awk '{print $1}') -p 22 (密码: root)"
+        sudo apt install -y ngrok
+        ngrok config add-authtoken ${{ secrets.NGROK_AUTH_TOKEN }}
+
 
     - name: 启用公网 SSH（ngrok）
       if: github.event.inputs.ssh == 'true'
@@ -78,6 +73,11 @@ jobs:
         sleep 10
         echo "🌍 公网 SSH 访问:"
         curl -s localhost:4040/api/tunnels | jq -r '.tunnels[0].public_url' | sed 's/tcp:\/\//ssh root@/'
+
+    - name: Get ngrok SSH address
+      run: |
+        curl -s http://127.0.0.1:4040/api/tunnels | jq -r '.tunnels[0].public_url'
+
 
     - name: 保持 SSH 连接活跃
       if: github.event.inputs.ssh == 'true'
