@@ -37,21 +37,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@main
-
-    - name: 初始化环境
-      env:
-        DEBIAN_FRONTEND: noninteractive
-      run: |
-        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
-        sudo -E apt-get -qq update
-        sudo -E apt-get -qq install $(curl -fsSL git.io/depends-ubuntu-2004)
-        sudo -E apt-get -qq autoremove --purge
-        sudo -E apt-get -qq clean
-        sudo timedatectl set-timezone "$TZ"
-        sudo mkdir -p /workdir
-        sudo chown $USER:$GROUPS /workdir
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
     - name: Install ngrok
       run: |
@@ -59,7 +46,23 @@ jobs:
         echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list
         sudo apt update
         sudo apt install -y ngrok
+
+    - name: Configure ngrok
+      run: |
         ngrok config add-authtoken ${{ secrets.NGROK_AUTH_TOKEN }}
+
+    - name: Start ngrok tunnel
+      run: |
+        nohup ngrok tcp 22 > ngrok.log 2>&1 &
+        sleep 5
+        curl -s http://127.0.0.1:4040/api/tunnels | jq -r '.tunnels[0].public_url'
+
+    - name: Enable SSH
+      run: |
+        sudo apt install -y openssh-server
+        sudo systemctl start ssh
+        sudo systemctl enable ssh
+        echo "root:$(openssl rand -base64 12)" | sudo chpasswd
 
 
     - name: 启用公网 SSH（ngrok）
@@ -73,10 +76,6 @@ jobs:
         sleep 10
         echo "🌍 公网 SSH 访问:"
         curl -s localhost:4040/api/tunnels | jq -r '.tunnels[0].public_url' | sed 's/tcp:\/\//ssh root@/'
-
-    - name: Get ngrok SSH address
-      run: |
-        curl -s http://127.0.0.1:4040/api/tunnels | jq -r '.tunnels[0].public_url'
 
 
     - name: 保持 SSH 连接活跃
