@@ -23,28 +23,26 @@ http://183.207.249.12/PLTV/4/224/3221225935/index.m3u8
 http://223.110.245.157/ott.js.chinamobile.com/PLTV/3/224/3221225935/index.m3u8
 #EXTINF:-1 tvg-id="JiangsuPublicNewsChannel.cn@SD",江苏公共 (576p)
 http://183.207.248.71/gitv/live1/G_JSGG/G_JSGG
-#EXTINF:-1 tvg-id="JiangsuSatelliteTV.cn@SD",江苏卫视 (1080p) [Not 24/7]
-http://183.207.248.71/cntv/live1/HD-2500k-1080P-jiangsustv/HD-2500k-1080P-jiangsustv
-#EXTINF:-1 tvg-id="JiangsuSatelliteTV.cn@SD",江苏卫视 (1080p)
-http://39.134.24.166/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226200/index.m3u8
-#EXTINF:-1 tvg-id="JiangsuSatelliteTV.cn@SD",江苏卫视 (1080p)
-http://39.134.115.163:8080/PLTV/88888910/224/3221225702/index.m3u8
-#EXTINF:-1 tvg-id="JiangsuSatelliteTV.cn@SD",江苏卫视 (1080p)
-http://39.134.115.163:8080/PLTV/88888910/224/3221225743/index.m3u8
-#EXTINF:-1 tvg-id="JiangsuSatelliteTV.cn@SD",江苏卫视 (1080p)
-http://112.25.48.68/live/program/live/jswshd/4000000/mnf.m3u8
-#EXTINF:-1 tvg-id="JiangsuSatelliteTV.cn@SD",江苏卫视 (1080p)
-http://117.169.120.140:8080/live/hdjiangsustv/.m3u8
-#EXTINF:-1 tvg-id="JiangsuSatelliteTV.cn@SD",江苏卫视 (1080p)
-http://183.207.248.71/cntv/live1/jiangsustv/jiangsustv
-#EXTINF:-1 tvg-id="JiangsuSatelliteTV.cn@SD",江苏卫视 (1080p)
-http://183.207.249.34/PLTV/4/224/3221227402/index.m3u8
-#EXTINF:-1 tvg-id="JiangsuSatelliteTV.cn@SD",江苏卫视 (1080p)
-http://223.110.245.157/ott.js.chinamobile.com/PLTV/3/224/3221227439/index.m3u8
-#EXTINF:-1 tvg-id="JiangsuSatelliteTV.cn@SD",江苏卫视 (1080p)
-http://223.110.245.170/PLTV/3/224/3221227255/index.m3u8
-#EXTINF:-1 tvg-id="JiangsuSatelliteTV.cn@SD",江苏卫视 (576p)
-http://183.207.248.71/gitv/live1/JSWS-HD/JSWS-HD
+#EXTINF:-1 tvg-id="",江苏卫视 (1080p) [Not 24/7]
+http://38.75.136.137:98/gslb/dsdqpub/jswshd.m3u8?auth=testpub
+#EXTINF:-1 tvg-id="",江苏卫视
+http://69.30.246.194/live/jsws.m3u8
+#EXTINF:-1 tvg-id="",江苏卫视
+http://27.41.245.32:801/hls/42/index.m3u8
+#EXTINF:-1 tvg-id="",江苏卫视
+http://222.214.208.34:59901/tsfile/live/0127_1.m3u8
+#EXTINF:-1 tvg-id="",江苏卫视
+http://222.169.85.8:9901/tsfile/live/0127_1.m3u8
+#EXTINF:-1 tvg-id="",江苏卫视
+http://60.16.0.216:5757/hls/24/index.m3u8
+#EXTINF:-1 tvg-id="",江苏卫视
+http://112.27.235.94:8000/hls/32/index.m3u8
+#EXTINF:-1 tvg-id="",江苏卫视
+http://112.46.85.60:8009/hls/33/index.m3u8
+#EXTINF:-1 tvg-id="",江苏卫视
+http://218.3.138.25:1111/tsfile/live/1017_1.m3u8
+#EXTINF:-1 tvg-id="",江苏卫视
+http://120.211.62.180:8000/hls/32/index.m3u8
 #EXTINF:-1 tvg-id="JiangsuCityChannel.cn@SD",江苏城市 (576p)
 http://183.207.248.71/gitv/live1/G_JSCS/G_JSCS
 #EXTINF:-1 tvg-id="JiangsuCityChannel.cn@SD",江苏城市 (576p)
@@ -59,5 +57,6 @@ http://183.207.248.71/gitv/live1/G_JSJY/G_JSJY
 http://223.110.245.151/ott.js.chinamobile.com/PLTV/3/224/3221225923/index.m3u8
 #EXTINF:-1 tvg-id="JiangsuVarietyChannel.cn@SD",江苏综艺 (576p) [Not 24/7]
 http://183.207.248.71/gitv/live1/G_JSZY/G_JSZY
+
 
 
