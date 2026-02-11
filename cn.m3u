@@ -21,10 +21,6 @@ http://111.221.137.234:44330/tsfile/live/0001_1.m3u8?key=txiptv&playlive=0&authi
 http://111.221.137.155:44330/tsfile/live/0001_1.m3u8?key=txiptv
 #EXTINF:-1 tvg-name="CCTV1" tvg-logo="https://gh-proxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv/CCTV1.png" group-title="📺央视频道",CCTV-1
 http://112.46.85.60:8009/hls/501/index.m3u8
-#EXTINF:-1 tvg-name="CCTV2-2" tvg-logo="https://gh-proxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv/CCTV2.png" group-title="📺央视频道",CCTV-2-2
-https://ldocctvwbcdbd.a.bdydns.com/ldocctvwbcd/cdrmldcctv2_1/index.m3u8?BR=td
-#EXTINF:-1 tvg-name="CCTV2-2" tvg-logo="https://gh-proxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv/CCTV2.png" group-title="📺央视频道",CCTV-2-2
-https://ldocctvwbcdbd.a.bdydns.com/ldocctvwbcd/cdrmldcctv2_1/index.m3u8?b=200-2100
 #EXTINF:-1 tvg-name="CCTV2" tvg-logo="https://gh-proxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv/CCTV2.png" group-title="📺央视频道",CCTV-2
 http://38.75.136.137:98/gslb/dsdqpub/cctv2hd.m3u8?auth=testpub
 #EXTINF:-1 tvg-name="CCTV2" tvg-logo="https://gh-proxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv/CCTV2.png" group-title="📺央视频道",CCTV-2
@@ -2229,5 +2225,6 @@ http://www.douzhicloud.site:35455/yy/1382749903
 http://www.douzhicloud.site:35455/yy/1354490667
 #EXTINF:-1 tvg-name="闯关东" tvg-logo="https://gh-proxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv/闯关东.png" group-title="🏛经典剧场",闯关东
 http://43.251.226.89:8080/play/1731.m3u8
+
 
 
